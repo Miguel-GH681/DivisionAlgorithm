@@ -1,0 +1,29 @@
+<div class="container-fluid myContainer pt-2 pb-2">
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <h1>Algoritmo de la división</h1>
+        </div>
+    </div>
+    <app-parts></app-parts>
+    <div class="row">
+        <div class="col-6">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Divisor</span>
+                <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="dividend">
+              </div>
+        </div>
+        <div class="col-6">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Dividendo</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" (click)="division()">Primary</button>
+            </div>
+        </div>
+    </div>
+</div>

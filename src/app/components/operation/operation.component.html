@@ -1,29 +1,33 @@
-<div class="container-fluid myContainer pt-2 pb-2">
+<div class="container-fluid myContainer">
     <div class="row">
-        <div class="d-flex justify-content-center">
-            <h1>Algoritmo de la división</h1>
+        <div class="d-flex justify-content-center pt-5">
+            <h2>Algoritmo de la división</h2>
         </div>
     </div>
-    <app-parts></app-parts>
-    <div class="row">
-        <div class="col-6">
+    <div class="row d-flex justify-content-center pt-5">
+        <div class="col-5">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Divisor</span>
                 <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="dividend">
               </div>
         </div>
-        <div class="col-6">
+        <div class="col-5">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Dividendo</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
+                <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
               </div>
         </div>
     </div>
     <div class="row">
         <div class="row">
             <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-primary" (click)="division()">Primary</button>
+                <button type="button" class="btn btn-primary" (click)="division()">Calcular</button>
             </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="result">
+            {{dividend}} = {{divisor}} * {{quotient}} + {{remainder}}
         </div>
     </div>
 </div>

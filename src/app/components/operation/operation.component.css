@@ -1,3 +1,10 @@
 .myContainer{
-    background-color: gray;
+    height: 100vh;
+}
+
+.result{
+    width: 75%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+    padding: 15px;
 }

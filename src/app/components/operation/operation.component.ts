@@ -18,10 +18,7 @@ export class OperationComponent implements OnInit {
   }
 
   division(){
-    this.quotient = this.dividend / this.divisor;
-    this.remainder = this.dividend % this.divisor;
-    console.log('el resultado es: ' + Math.floor(this.quotient));
-    console.log('el residuo es: ' + this.remainder);
-
+    this.quotient = Math.floor(this.dividend / this.divisor);
+    this.remainder = this.dividend % this.divisor;    
   }
 }

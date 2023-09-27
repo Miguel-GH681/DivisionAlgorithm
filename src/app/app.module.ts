@@ -6,13 +6,15 @@ import { OperationComponent } from './components/operation/operation.component';
 import { FormsModule } from '@angular/forms';
 import { PartsComponent } from './components/parts/parts.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OperationComponent,
     PartsComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

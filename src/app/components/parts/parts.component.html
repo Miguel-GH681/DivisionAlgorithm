@@ -1,63 +1,38 @@
-<div class="container-fluid myContainer">
-    <div class="d-flex justify-content-center pt-5">
-        <h3>Partes de la división</h3>
-    </div>
-
-    <div class="container text-center">
-        <div class="row justify-content-md-center">
-            <div class="col-4">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div> 
-                  <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div> 
+<div class="container-fluid principal-container">
+  <div class="d-flex justify-content-center pt-4">
+    <h2>Partes de la división</h2>
+  </div>
+    <div class="row pb-5 pt-5">
+      <div class="col-md-5">
+        <app-card [title]="'Divisor'" [description]="divisor_description" [color]="'#0d6efd'"></app-card>
+        <app-card [title]="'Residuo'" [description]="remainder_description" [color]="'#198754'"></app-card>
+      </div>
+      <div class="col-md-2">
+        <div class="d-flex justify-content-center">
+          <div class="d-flex flex-row">
+            <div class="divisor">
+              <button type="button" class="btn btn-primary">5</button>
             </div>
-            <div class="col-md-auto">
-                <div class="d-flex flex-row">
-                    <div class="divisor">
-                        <button type="button" class="btn btn-primary">5</button>
-                    </div>
-                    <div class="second">
-                        <div class="quotient">
-                            <button type="button" class="btn btn-warning">2</button>
-                        </div>
-                        <div class="dividend">
-                            <button type="button" class="btn btn-danger ms-2 mt-2">10</button>
-                        </div>
-                        <div class="less">
-                            <button type="button" class="btn btn-info">10</button>
-                        </div>
-                        <div class="remainder">
-                            <button type="button" class="btn btn-success ms-2 mt-2">0</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="second">
+              <div class="quotient">
+                  <button type="button" class="btn btn-warning">2</button>
+              </div>
+              <div class="dividend">
+                  <button type="button" class="btn btn-danger">10</button>
+              </div>
+              <div class="less">
+                  <button type="button" class="btn btn-info">10</button>
+              </div>
+              <div class="remainder">
+                  <button type="button" class="btn btn-success">0</button>
+              </div>
             </div>
-            <div class="col-4">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div> 
-                  <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div> 
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-md-5">
+        <app-card [title]="'Cociente'" [description]="quotient_description" [color]="'#ffc107'"></app-card>
+        <app-card [title]="'Dividendo'" [description]="dividend_description" [color]="'#dc3545'"></app-card>
+      </div>
     </div>
 </div>

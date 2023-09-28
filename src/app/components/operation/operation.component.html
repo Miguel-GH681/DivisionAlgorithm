@@ -1,33 +1,52 @@
-<div class="container-fluid myContainer">
-    <div class="row">
-        <div class="d-flex justify-content-center pt-5">
-            <h2>Algoritmo de la división</h2>
-        </div>
+<div class="container-fluid principal-container">
+    <div class="d-flex justify-content-center pt-4 pb-4">
+        <h2>Algoritmo de la división</h2>
     </div>
-    <div class="row d-flex justify-content-center pt-5">
-        <div class="col-5">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Divisor</span>
-                <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="dividend">
-              </div>
-        </div>
-        <div class="col-5">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Dividendo</span>
-                <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
-              </div>
-        </div>
+    <div class="d-flex justify-content-center pt-4 pb-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a itaque optio voluptate eaque aperiam sapiente corporis blanditiis modi, doloremque sequi harum nobis quo perspiciatis! Mollitia laboriosam quam omnis amet.</p>
     </div>
-    <div class="row">
-        <div class="row">
-            <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-primary" (click)="division()">Calcular</button>
+    <div class="d-flex justify-content-center teory-container">
+        <button type="button" class="btn btn-danger">D</button>
+        <div>=</div>
+        <button type="button" class="btn btn-primary">d</button>
+        <div>x</div>
+        <button type="button" class="btn btn-warning">q</button>
+        <div>+</div>
+        <button type="button" class="btn btn-success">r</button>
+    </div>
+    
+    <div class="row operation-body">
+        <div class="col align-self-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Divisor</span>
+                            <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="dividend">
+                            </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Dividendo</span>
+                            <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
+                            </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <div class="result">
-            {{dividend}} = {{divisor}} * {{quotient}} + {{remainder}}
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-dark" (click)="division()">Calcular</button>
+            </div>
+            <div class="container" *ngIf="show_result">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="result">
+                            <p>{{dividend}} = {{divisor}} * {{quotient}} + {{remainder}}</p>
+                            <p>{{dividend}} = {{divisor * quotient}} + {{remainder}}</p>
+                            <p>{{dividend}} = {{(divisor * quotient) + remainder}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

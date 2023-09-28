@@ -11,7 +11,7 @@ export class OperationComponent implements OnInit {
   divisor : number = 1;
   quotient : number = 1;
   remainder : number = 1;
-
+  show_result : boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class OperationComponent implements OnInit {
 
   division(){
     this.quotient = Math.floor(this.dividend / this.divisor);
-    this.remainder = this.dividend % this.divisor;    
+    this.remainder = this.dividend % this.divisor;   
+    this.show_result = !this.show_result; 
   }
 }

@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { PartsComponent } from './components/parts/parts.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
+import { EuclidComponent } from './components/euclid/euclid.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CardComponent } from './components/card/card.component';
     OperationComponent,
     PartsComponent,
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    EuclidComponent
   ],
   imports: [
     BrowserModule,

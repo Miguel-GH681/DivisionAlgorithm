@@ -1,3 +1,5 @@
+<div id="euclides" style="padding: 25px; background-color: black;"></div>
+
 <div class="container-fluid principal-container">
     <div class="d-flex justify-content-center pt-4 pb-4">
         <h2>Algoritmo de euclides</h2>
@@ -8,45 +10,28 @@
             dos números. El procedimiento es el siguiente: <br>
         </p>
     </div>
-    
     <div class="row operation-body">
         <div class="col align-self-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-5">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Divisor</span>
-                            <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="dividend">
-                            </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Dividendo</span>
-                            <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
-                            </div>
-                    </div>
-                </div>
-            </div>
+            <app-custom-input [description_list]="description_list" [disabled]="show_result" (values_event)="algorithm($event)"></app-custom-input>
             <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-dark" (click)="algorithm()">Calcular</button>
-            </div>
-            <div class="container">
-                <table class="table table-dark table-striped-columns">
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td *ngFor="let q of quotient_list">{{q}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{dividend}}</td>
-                            <td *ngFor="let n of number_list">{{n}}</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td *ngFor="let r of remainer_list">{{r}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive" *ngIf="show_result">
+                    <table class="table table-dark table-striped-columns">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td *ngFor="let q of quotient_list">{{q}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{dividend}}</td>
+                                <td *ngFor="let n of number_list">{{n}}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td *ngFor="let r of remainer_list">{{r}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

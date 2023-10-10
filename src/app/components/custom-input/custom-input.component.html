@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">{{description_list[0]}}</span>
+            <input *ngIf="!disabled" type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="first_value">
+            <input *ngIf="disabled" type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="first_value" disabled readonly>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">{{description_list[1]}}</span>
+            <input *ngIf="!disabled" type="number" class="form-control" aria-label="Sizing example input"[(ngModel)]="second_value">
+            <input *ngIf="disabled" type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="second_value" disabled readonly>
+        </div>
+    </div>    
+</div>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-dark" (click)="sendValues()">{{text_button}}</button>
+</div>

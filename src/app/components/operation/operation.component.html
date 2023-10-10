@@ -1,9 +1,14 @@
-<div class="container-fluid principal-container">
-    <div class="d-flex justify-content-center pt-4 pb-4">
+<div id="algoritmo" style="padding: 25px; background-color: black;"></div>
+<div class="container-fluid principal-container pt-4">
+    <div class="d-flex justify-content-center p-2">
         <h2>Algoritmo de la división</h2>
     </div>
-    <div class="pt-4 pb-4">
-        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a itaque optio voluptate eaque aperiam sapiente corporis blanditiis modi, doloremque sequi harum nobis quo perspiciatis! Mollitia laboriosam quam omnis amet.</p>
+    <div>
+        <p class="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a itaque optio voluptate eaque 
+            aperiam sapiente corporis blanditiis modi, doloremque sequi harum nobis quo perspiciatis! Mollitia
+            laboriosam quam omnis amet.
+        </p>
     </div>
     <div class="d-flex justify-content-center teory-container">
         <button type="button" class="btn btn-danger">D</button>
@@ -14,28 +19,9 @@
         <div>+</div>
         <button type="button" class="btn btn-success">r</button>
     </div>
-    
     <div class="row operation-body">
         <div class="col align-self-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-5">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Divisor</span>
-                            <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="dividend">
-                            </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Dividendo</span>
-                            <input type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="divisor">
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-dark" (click)="division()">Calcular</button>
-            </div>
+            <app-custom-input [description_list]="description_list" [disabled]="show_result" (values_event)="division($event)"></app-custom-input>
             <div class="container" *ngIf="show_result">
                 <div class="row justify-content-center">
                     <div class="col-md-10">

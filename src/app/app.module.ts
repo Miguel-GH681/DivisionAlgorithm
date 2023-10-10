@@ -8,6 +8,7 @@ import { PartsComponent } from './components/parts/parts.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
 import { EuclidComponent } from './components/euclid/euclid.component';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EuclidComponent } from './components/euclid/euclid.component';
     PartsComponent,
     NavbarComponent,
     CardComponent,
-    EuclidComponent
+    EuclidComponent,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,

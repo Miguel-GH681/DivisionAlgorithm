@@ -12,14 +12,21 @@ export class OperationComponent implements OnInit {
   quotient : number = 1;
   remainder : number = 1;
   show_result : boolean = false;
+  button_text : string = 'Calcular';
+  description_list: string[] = ['Dividendo', 'Divisor'];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  division(){
+  division(values : number[]){
+    this.dividend = values[0];
+    this.divisor = values[1];
+    
     this.quotient = Math.floor(this.dividend / this.divisor);
     this.remainder = this.dividend % this.divisor;   
-    this.show_result = !this.show_result; 
+    this.show_result = !this.show_result;
+    this.button_text = this.show_result ? 'Limpiar' : 'Calcular';
   }
 }

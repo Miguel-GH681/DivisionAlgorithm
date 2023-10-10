@@ -8,29 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class EuclidComponent implements OnInit {
   dividend : number = 1;
   divisor : number = 1;
-  quotient : number = 1;
   remainder : number = 1;
   show_result : boolean = false;
 
   remainer_list : number[] = [];
   quotient_list : number[] = [];
   number_list : number[] = [];
+  description_list : string[] = ['Valor Uno', 'Valor Dos'];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  division(){
-    this.quotient = Math.floor(this.dividend / this.divisor);
-    this.remainder = this.dividend % this.divisor;   
-    this.show_result = !this.show_result; 
-  }
-
-  algorithm(){
-    let dividend = this.dividend;
-    let divisor = this.divisor;
-    this.reloadValues();
+  algorithm(values : number[]){    
+    let dividend = values[0];
+    let divisor = values[1];
+    this.reloadValues(dividend);
+    this.showResult();
 
     for(let i = 0; this.remainder != 0; i++){
       this.remainer_list[i] = dividend % divisor;
@@ -42,13 +37,17 @@ export class EuclidComponent implements OnInit {
         divisor = this.remainder
       }
     }
-    this.number_list.forEach(n => console.log(n));
   }
 
-  reloadValues(){
+  reloadValues(dividend : number){
     this.remainer_list = [];
     this.quotient_list = [];
     this.number_list = [];
     this.remainder = 1;
+    this.dividend = dividend;
+  }
+
+  showResult(){
+    this.show_result = !this.show_result;
   }
 }

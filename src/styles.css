@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root{
+    --Black: rgba(0, 0, 0, 1);
+    --White: rgba(255,255,255,1);
+    --Blue: rgb(51, 54, 102);
+    --Gray: rgb(43,48,53,1);
+}
+
+*{
+    font-family: 'Rubik', sans-serif;
+    color: var(--White);
+}
+
+.principal-container{
+    background-color: var(--Black);
+}

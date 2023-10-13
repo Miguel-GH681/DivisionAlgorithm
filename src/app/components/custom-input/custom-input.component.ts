@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-custom-input',
@@ -10,28 +11,43 @@ export class CustomInputComponent implements OnInit {
   @Input() description_list : string[] = [];
   @Input() disabled : boolean = false;
   @Output() values_event = new EventEmitter<Array<number>>();
-  first_value : number = 1;
-  second_value : number = 1;
-  text_button : string = 'Calcular';
-  values_list : number[] = [];
 
-  constructor() { }
+  text_button : string = 'Calcular';
+  values : number[] = [];
+  inputs : string[] = ['', ''];
+
+  constructor(private toastr : ToastrService) { }
 
   ngOnInit(): void {
   }
 
-  getValues(){
-    this.values_list[0] = this.first_value;
-    this.values_list[1] = this.second_value;
+  sendValues(number_form : any){
+    if(number_form.valid && !this.disabled){
+      this.changeText();
+      this.values_event.emit(this.values);
+    } else if(this.disabled){
+      this.changeText();
+      this.values_event.emit(this.values);
+      this.values = [];
+    } else{
+      this.toastr.success('Llena todos los campos', 'MathCode', {
+        timeOut: 3000
+      });
+    }
   }
 
   changeText(){
     this.text_button = this.disabled ? 'Calcular' : 'Limpiar';
   }
 
-  sendValues(){
-    this.getValues();
-    this.changeText();
-    this.values_event.emit(this.values_list);
+  addInput(){
+    this.inputs.push('');
   }
+
+  deleteInput(){
+    this.inputs.pop();
+    this.values.pop();
+  }
+
+  /*Pendiente documentar validación de formularios*/
 }

@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
 import { EuclidComponent } from './components/euclid/euclid.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { ToastNoAnimationModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ToastNoAnimationModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

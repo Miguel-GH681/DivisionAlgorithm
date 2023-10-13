@@ -1,19 +1,19 @@
-<div class="row justify-content-center">
-    <div class="col-md-5">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">{{description_list[0]}}</span>
-            <input *ngIf="!disabled" type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="first_value">
-            <input *ngIf="disabled" type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="first_value" disabled readonly>
+<form #number_form="ngForm">
+    <div class="row justify-content-center">
+        <div class="col-md-5" *ngFor="let input of inputs; index as i">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor {{i+1}}</span>
+                <input name="value-{{i}}" *ngIf="!disabled" type="number" class="form-control" [(ngModel)]="values[i]" required>
+                <input name="valued-{{i}}" *ngIf="disabled" type="number" class="form-control" [(ngModel)]="values[i]" disabled readonly>
+            </div>
         </div>
     </div>
-    <div class="col-md-5">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">{{description_list[1]}}</span>
-            <input *ngIf="!disabled" type="number" class="form-control" aria-label="Sizing example input"[(ngModel)]="second_value">
-            <input *ngIf="disabled" type="number" class="form-control" aria-label="Sizing example input" [(ngModel)]="second_value" disabled readonly>
-        </div>
-    </div>    
-</div>
-<div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-dark" (click)="sendValues()">{{text_button}}</button>
+</form>    
+
+<div class="row justify-content-center">
+    <div class="col-md-3 d-flex justify-content-around">
+        <button *ngIf="inputs.length > 2" type="button" class="btn btn-dark" (click)="deleteInput()">Eliminar</button>
+        <button *ngIf="inputs.length < 5 && !disabled" type="button" class="btn btn-dark" (click)="addInput()">Agregar</button>
+        <button type="button" class="btn btn-dark" (click)="sendValues(number_form)">{{text_button}}</button>    
+    </div>
 </div>

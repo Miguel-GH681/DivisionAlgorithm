@@ -9,9 +9,12 @@
 
 *{
     font-family: 'Rubik', sans-serif;
-    color: var(--White);
 }
 
-.principal-container{
-    background-color: var(--Black);
+body{
+    padding: 10px
+}
+
+.divisor-block{
+    padding: 15px;
 }

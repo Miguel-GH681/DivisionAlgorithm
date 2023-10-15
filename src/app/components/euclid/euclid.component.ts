@@ -11,10 +11,14 @@ export class EuclidComponent implements OnInit {
   remainder : number = 1;
   show_result : boolean = false;
 
-  remainer_list : number[] = [];
-  quotient_list : number[] = [];
-  number_list : number[] = [];
-  description_list : string[] = ['Valor Uno', 'Valor Dos'];
+  remainers : [number[]] = [[]];
+  quotients : [number[]] = [[]];
+  numbers : [number[]] = [[]];
+  dividends : number[] = [];
+  first_result? : number = undefined;
+
+  tables : string[] = [];
+  descriptions : string[] = ['Valor Uno', 'Valor Dos'];
 
   constructor() { }
 
@@ -22,29 +26,58 @@ export class EuclidComponent implements OnInit {
   }
 
   algorithm(values : number[]){    
-    let dividend = values[0];
-    let divisor = values[1];
-    this.reloadValues(dividend);
-    this.showResult();
-
-    for(let i = 0; this.remainder != 0; i++){
-      this.remainer_list[i] = dividend % divisor;
-      this.remainder = dividend % divisor;
-      this.quotient_list[i] = (dividend - this.remainder) / divisor;
-      this.number_list[i] = divisor;
-      if(this.remainder != 0){
-        dividend = divisor;
-        divisor = this.remainder
+    let dividend;
+    let divisor;
+    
+    if(!this.show_result){
+      this.matrixConfiguration(values.length);
+      for(let i = 0; i < this.tables.length; i++){
+        dividend = values[this.indexConfiguration(i)];
+        divisor = this.first_result ?? values[i+1];
+        this.remainder = 1;
+  
+        for(let j = 0; this.remainder != 0; j++){
+          this.remainers[i][j] = dividend % divisor;
+          this.remainder = dividend % divisor;
+          this.quotients[i][j] = (dividend - this.remainder) / divisor;
+          this.numbers[i][j] = divisor;
+          if(this.remainder != 0){
+            dividend = divisor;
+            divisor = this.remainder;
+          } else{
+            this.first_result = this.numbers[i][j];
+            this.dividends[i] = values[this.indexConfiguration(i)]; 
+          }
+        }
       }
+
+      this.showResult();
+    } else{
+      this.reloadValues();
     }
   }
 
-  reloadValues(dividend : number){
-    this.remainer_list = [];
-    this.quotient_list = [];
-    this.number_list = [];
+  matrixConfiguration(size : number){
+    for(let i = 0; i < (size-1); i++ ){
+      this.tables.push('');
+      this.remainers[i] = [];
+      this.numbers[i] = [];
+      this.quotients[i] = [];
+    }
+  }
+
+  indexConfiguration(i : number){
+    return (i == 0) ? 0 : i+1;
+  }
+
+  reloadValues(){
+    this.remainers = [[]];
+    this.quotients = [[]];
+    this.numbers = [[]];
+    this.tables = [];
     this.remainder = 1;
-    this.dividend = dividend;
+    this.first_result = undefined;
+    this.showResult();
   }
 
   showResult(){

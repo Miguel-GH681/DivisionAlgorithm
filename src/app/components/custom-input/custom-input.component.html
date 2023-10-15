@@ -3,7 +3,7 @@
         <div class="col-md-5" *ngFor="let input of inputs; index as i">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Valor {{i+1}}</span>
-                <input name="value-{{i}}" *ngIf="!disabled" type="number" class="form-control" [(ngModel)]="values[i]" required>
+                <input name="value-{{i}}" *ngIf="!disabled" type="number" class="form-control" [(ngModel)]="values[i]" required min="1" max="9999999">
                 <input name="valued-{{i}}" *ngIf="disabled" type="number" class="form-control" [(ngModel)]="values[i]" disabled readonly>
             </div>
         </div>
@@ -17,3 +17,5 @@
         <button type="button" class="btn btn-dark" (click)="sendValues(number_form)">{{text_button}}</button>    
     </div>
 </div>
+
+<!-- pattern="^(\d*[1-9]+\d*\.?\d*|\d*\.\d*[1-9]+\d*)$" -->

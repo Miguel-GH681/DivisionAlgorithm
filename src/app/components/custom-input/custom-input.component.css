@@ -1,4 +1,4 @@
 span{
-    background-color: #2b3035;
+    background-color: var(--Gray);
     color: white;
 }

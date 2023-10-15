@@ -1,0 +1,54 @@
+span{
+    background-color: var(--Gray);
+    color: var(--White);
+}
+
+.result{
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 15px;
+    text-align: center;
+    color: var(--White);
+    background-color: var(--Gray);
+}
+
+.teory-container button{
+    height: 40px;
+    width: 40px;
+}
+
+.teory-container div{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 10px 0px 10px;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.less{
+    padding: 5px 0px 10px 15px;
+}
+
+.dividend{
+    border-top: 5px solid var(--Gray);
+    border-left: 5px solid var(--Gray);
+    padding: 10px 10px 5px 10px;
+}
+
+.divisor{
+    padding: 70px 15px 0px 0px;
+}
+
+.remainder{
+    border-top: 5px solid var(--Gray);
+    padding: 10px 0px 0px 15px;
+}
+
+.quotient{
+    padding: 0px 0px 5px 15px
+}

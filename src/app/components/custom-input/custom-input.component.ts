@@ -24,13 +24,14 @@ export class CustomInputComponent implements OnInit {
   sendValues(number_form : any){
     if(number_form.valid && !this.disabled){
       this.changeText();
+      this.sortValues();
       this.values_event.emit(this.values);
     } else if(this.disabled){
       this.changeText();
       this.values_event.emit(this.values);
       this.values = [];
     } else{
-      this.toastr.success('Llena todos los campos', 'MathCode', {
+      this.toastr.success('Ingrese números válidos', 'Mathcode', {
         timeOut: 3000
       });
     }
@@ -49,5 +50,7 @@ export class CustomInputComponent implements OnInit {
     this.values.pop();
   }
 
-  /*Pendiente documentar validación de formularios*/
+  sortValues(){
+    this.values = this.values.sort((a,b)=>b-a);
+  }
 }
